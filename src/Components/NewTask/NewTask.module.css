@@ -1,0 +1,81 @@
+.nt_flexColumn {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.nt_container {
+  gap: 10px;
+}
+
+.nt_fields {
+  gap: 5px;
+  width: 70%;
+
+}
+
+.nt_fields input {
+  border: none;
+  border-radius: 8px;
+  padding: 5px;
+  width: 100%;
+  background-color: #Eff3f5;
+}
+
+.nt_fields input:focus {
+  outline: none;
+}
+
+.nt_fields textarea {
+  border: none;
+  border-radius: 8px;
+  padding: 5px;
+  width: 100%;
+  height: 15vh;
+  background-color: #Eff3f5;
+  resize: none;
+}
+
+.nt_fields textarea:focus {
+  outline: none;
+}
+
+.nt_subtask {
+  display: flex;
+  place-items: center;
+  width: 100%;
+}
+
+.nt_subtask span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.nt_bottonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.nt_bottonGroup button {
+  height: 30px;
+  width: 60px;
+  border-radius: 8px;
+  padding: 5px;
+  transition: .2s ease-in-out;
+  opacity: 0.9;
+}
+
+.nt_bottonGroup button:hover {
+  scale: 1.1;
+  opacity: 1;
+}
+
+.nt_btn_cancel {
+  background-color: rgba(240, 25, 25, 0.853);
+}
+
+.nt_btn_create {
+  background-color: rgba(29, 29, 193, 0.921);
+}
