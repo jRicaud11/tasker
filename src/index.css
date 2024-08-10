@@ -1,0 +1,12 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #192229;
+  color: #Eff3f5;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}

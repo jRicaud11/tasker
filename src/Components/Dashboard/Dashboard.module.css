@@ -1,0 +1,29 @@
+.db_container {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    width: 70vw;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #Eff3f5;
+    border-radius: 10px;
+}
+
+.db_header {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.db_section {
+    display: flex;
+    place-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
