@@ -1,6 +1,7 @@
 .task_body {
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     width: 100%;
     background-color: #2A3B47;
     border-radius: 8px;
@@ -8,5 +9,14 @@
 
 .task_description {
     display: flex;
+    align-items: center;
+    width: 100%;
     gap: 30px;
+}
+
+.task_container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 }
