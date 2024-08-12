@@ -18,18 +18,24 @@ function useTaskReducer() {
     payload: task
   })
   
-  return {state, completeTask, addTask}
+  const deleteTask = (task) => dispatch({
+    type: TASK_ACTIONS.DELETE_TASK,
+    payload: task
+  })
+
+  return {state, completeTask, addTask, deleteTask}
 }
 
 export function TasksProvider ({ children }) {
 
-  const {state, completeTask, addTask} = useTaskReducer()
+  const {state, completeTask, addTask, deleteTask} = useTaskReducer()
 
   return(
     <TasksContext.Provider value={
       {tasks: state,
         completeTask,
-        addTask
+        addTask,
+        deleteTask
       } 
     }
     >
