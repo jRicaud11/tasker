@@ -6,10 +6,11 @@ import { useTask } from "../../hooks/useTask"
 
 export function NewTask ({ setModal }) {
   const { addTask } = useContext(TasksContext)
-  
+
   const {task,
     subTask,
     errors,
+    setErrors,
     controlNameChange,
     handleChangeDescription,
     controlChangeSubtask,
@@ -17,6 +18,10 @@ export function NewTask ({ setModal }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if(task.name.trim()===''){
+      setErrors({...errors, nameError:'Can\'t create a task without name'})
+      return
+    }
     addTask(task)
     setModal(false)
   }
@@ -49,7 +54,8 @@ export function NewTask ({ setModal }) {
             Add
           </span>
         </div>
-          {errors.subtaskError && <span>{errors.subtaskError}</span>}
+        {errors.subtaskError && <span>{errors.subtaskError}</span>}
+
         <div className={styles.nt_st_list}>
           <ul>
             {task.subtasks && task.subtasks.map(el =>{
@@ -67,8 +73,8 @@ export function NewTask ({ setModal }) {
       </div>
 
       <footer className={styles.nt_bottonGroup}>
-        <button className={styles.nt_btn_cancel} onClick={()=>setModal(false)}>Cancel</button>
-        <button className={styles.nt_btn_create}>Create</button>
+        <button className={styles.nt_btn_cancel} type='button' onClick={()=>setModal(false)}>Cancel</button>
+        <button className={styles.nt_btn_create} type="submit">Create</button>
       </footer>
     </form>
   )
