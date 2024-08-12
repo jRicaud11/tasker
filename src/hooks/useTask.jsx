@@ -4,6 +4,7 @@ export function useTask() {
   const [task, setTask] = useState({
     name:'',
     description:'',
+    completed: false,
     subtasks:[]
   })
 
@@ -39,14 +40,25 @@ export function useTask() {
     }
     setSubTask(newSubtask)
   }
+
   const addNewSubtask = () => {
-    setTask({...task, subtasks:[...task.subtasks, subTask]})
+    if(subTask.length === 0) {
+      setErrors({...errors, subtaskError:'Can\'t add an empty subtask'})
+      return
+    }
+    if(task.subtasks.length === 5){
+      setErrors({...errors, subtaskError:'Can\'t add more than 5 subtasks'})
+    } else {
+      setTask({...task, subtasks:[...task.subtasks, subTask]})
+      setErrors({...errors, subtaskError:''})
+    }
   }
 
   return {
     task,
     subTask,
     errors,
+    setErrors,
     controlNameChange,
     handleChangeDescription,
     controlChangeSubtask,
